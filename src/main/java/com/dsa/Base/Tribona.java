@@ -20,7 +20,6 @@ public class Tribona {
 		c = 2;
 
 		list.add(a);
-		// lavesh
 		list.add(b);
 		list.add(c);
 
