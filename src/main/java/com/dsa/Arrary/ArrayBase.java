@@ -4,11 +4,14 @@ import java.util.Arrays;
 
 public class ArrayBase {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		int[] a = new int[3];
 
-		int[] b = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		int[] b = { 1, 2, 3, 4, 5, 6,7,0, 8, 9, 10, 11 };
 
 		int i = 0;
 		while (i < b.length) {
@@ -80,6 +83,39 @@ public class ArrayBase {
 
 		System.out.println("sum of prime no: " + sumofprimeno);
 
+		int notPrimeSum = 0;
+		// sum of not prime no
+		for (int tt = 0; tt < b.length; tt++) {
+
+			if (notPrime(b[tt])) {
+				notPrimeSum = notPrimeSum + b[tt];
+			}
+		}
+
+		// max no in arrary
+
+		int max = b[0];
+
+		for (int ok = 1; ok < b.length; ok++) {
+
+			if (max < b[ok]) {
+				max = b[ok];
+			}
+		}
+
+		System.out.println("max no is : " + max);
+
+		// min element
+
+		int min = b[0];
+
+		for (int hhh = 1; hhh < b.length; hhh++) {
+			if (min > b[hhh]) {
+				min = b[hhh];
+			}
+		}
+
+		System.out.println("min is " + min);
 	}
 
 	private static boolean prime(int s) {
@@ -95,4 +131,19 @@ public class ArrayBase {
 
 		return true;
 	}
+
+	private static boolean notPrime(int n) {
+		if (n == 1) {
+			return false;
+		}
+
+		for (int i = 2; i < n; i++) {
+			if (n % 2 == 0) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 }
